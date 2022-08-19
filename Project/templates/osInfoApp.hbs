@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/stylehbs.css" >
+    <style>
+        
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#output{
+    text-align: center;
+    margin-top: 25px;
+    -webkit-box-shadow: -5px 3px 20px 0px #fff;
+-moz-box-shadow: -5px 3px 20px 0px rgba(0,0,0,0.77);
+box-shadow: -5px 3px 20px 0px rgba(0,0,0,0.77);
+    padding: 20px 30px;
+    line-height: 22.5px;
+   background-color: #A9C9FF;
+background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+
+    border-radius: 10px;
+
+}
+
+button{
+    margin-top: 15px;
+    padding: 10px 25px;
+    border-radius: 7%;
+  border: 5px groove #1C6EA4;
+border-radius: 40px 40px 40px 40px;
+cursor: pointer;
+transition: all 0.5s ease;
+}
+
+button:hover{
+background-color: #1C6EA4;
+color: #fff;
+font-weight: 600;
+}
+
+
+.op{
+display: none;
+}
+.active{
+    display: block;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="main">
+
+    <h2>Get Your OS Details By Clicking Below!</h2>
+<button  id="btn">Show Me</button>
+
+    <div id="output" class=" op" >
+ <h4> Version:</h4> <p id="h2">{{OsVersion}}</p>
+ <h4> Hostname:</h4> <p id="h2">{{hostname}}</p>
+ <h4> Release:</h4> <p id="h2">{{release}}</p>
+ <h4> architecture:</h4> <p id="h2">{{architecture}}</p>
+ <h4> Platform:</h4> <p id="h2">{{platform}}</p>
+ <h4> Type:</h4> <p id="h2">{{type}}</p>
+ <h4> Total Memory:</h4> <p id="h2">{{totalmemexact}}gb</p>
+ <h4> Free Memory:</h4> <p id="h2">{{freememexact }}gb</p>
+
+
+</div>
+</div>
+
+
+<script>
+
+let btn=document.getElementById('btn');
+let output=document.getElementById('output');
+btn.addEventListener('click',(event)=>{
+
+    output.classList.toggle('active');
+if(output.classList.contains('active')){
+    btn.innerHTML="Hide Me";
+}
+else{
+    btn.innerHTML="Show Me";
+
+}
+
+
+
+
+
+
+});
+
+
+
+
+</script>
+</body>
+</html>
